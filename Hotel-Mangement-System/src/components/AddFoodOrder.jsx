@@ -7,7 +7,7 @@ const AddFoodOrder = ({ onFoodAdded }) => {
     room_id: "",
     item_name: "",
     quantity: "",
-    price: ""
+    price: "",
   });
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const AddFoodOrder = ({ onFoodAdded }) => {
     fetch("http://localhost:5000/hotel/food-orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(order)
+      body: JSON.stringify(order),
     })
       .then((res) => res.json())
       .then(() => {
