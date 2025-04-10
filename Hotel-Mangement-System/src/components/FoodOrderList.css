@@ -1,0 +1,33 @@
+.food-order-list {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .food-order-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .food-order-card {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+  
+  .food-order-card:hover {
+    background-color: #e0f2fe;
+    transform: translateY(-5px);
+  }
+  
+  .food-order-card p {
+    margin: 8px 0;
+    font-size: 14px;
+  }
+  
