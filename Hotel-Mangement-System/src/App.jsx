@@ -5,6 +5,7 @@ import BookRoom from "./components/BookRoom";
 import AddFoodOrder from "./components/AddFoodOrder";
 import FoodOrderList from "./components/FoodOrderList";
 import Navbar from "./components/Navbar";
+import Dashboard from "./components/Dashboard"; 
 import "./App.css";
 
 function App() {
@@ -14,16 +15,19 @@ function App() {
   const fetchFoodOrders = () => {
     setRefresh(!refresh);
   };
-const handleBookingAdded = ()=>{
-  setRefresh(!refresh);
-}
+
+  const handleBookingAdded = () => {
+    setRefresh(!refresh);
+  };
+
   return (
     <div className="App">
       <Navbar setPage={setPage} />
 
       <div className="container">
+        {page === "dashboard" && <Dashboard />} {/* 👈 Dashboard here */}
         {page === "addRoom" && <AddRoom onRoomAdded={() => setRefresh(!refresh)} />}
-        {page === "bookRoom" && <BookRoom  onBookingAdded={handleBookingAdded}/>}
+        {page === "bookRoom" && <BookRoom onBookingAdded={handleBookingAdded} />}
         {page === "addFood" && <AddFoodOrder onFoodAdded={fetchFoodOrders} />}
         {page === "showRooms" && <RoomList refresh={refresh} />}
         {page === "showFoodOrders" && <FoodOrderList />}

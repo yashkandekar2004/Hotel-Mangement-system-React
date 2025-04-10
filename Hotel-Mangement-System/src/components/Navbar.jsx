@@ -6,6 +6,7 @@ function Navbar({ setPage }) {
     <nav className="navbar">
       <h2>🏨 Hotel Management</h2>
       <ul>
+        <li onClick={() => setPage("dashboard")}>Dashboard</li>
         <li onClick={() => setPage("addRoom")}>Add Room</li>
         <li onClick={() => setPage("bookRoom")}>Book Room</li>
         <li onClick={() => setPage("addFood")}>Add Food Order</li>
