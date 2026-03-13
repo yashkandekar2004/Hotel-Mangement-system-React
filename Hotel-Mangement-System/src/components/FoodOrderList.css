@@ -1,50 +1,130 @@
 .food-order-list {
-  padding: 30px;
-  max-width: 1200px;
-  margin: auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  animation: fadeIn 0.5s ease-in;
+  animation: fadeIn var(--transition-normal);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.list-header {
+  margin-bottom: 2rem;
+}
+
+.list-header h2 {
+  font-size: 2rem;
+  color: var(--bg-accent);
+  margin-bottom: 0.5rem;
+}
+
+.list-header p {
+  color: var(--text-secondary);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-color);
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
 }
 
 .food-order-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .food-order-card {
-  background: linear-gradient(135deg, #f0fdfa, #e0f2fe);
-  border: 1px solid #cbd5e1;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-  border-radius: 16px;
-  padding: 1.2rem;
-  width: calc(33.33% - 24px);
-  box-sizing: border-box;
-  transition: all 0.4s ease;
-  cursor: pointer;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
 }
 
 .food-order-card:hover {
-  background: linear-gradient(135deg, #a5f3fc, #dbeafe);
-  transform: scale(1.03) translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-color);
 }
 
-.food-order-card p {
-  margin: 10px 0;
-  font-size: 15px;
-  color: #1e293b;
-  line-height: 1.4;
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px dashed var(--border-color);
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.05), transparent);
+}
+
+.order-header h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  color: var(--bg-accent);
+}
+
+.order-time {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  background-color: var(--bg-primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.order-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.item-name {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.item-qty {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.order-total span {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.order-total .price {
+  font-size: 1.5rem;
+  color: var(--bg-accent);
+  font-weight: 700;
+  letter-spacing: normal;
 }

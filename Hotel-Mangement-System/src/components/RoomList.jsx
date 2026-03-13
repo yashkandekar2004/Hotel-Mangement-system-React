@@ -13,20 +13,32 @@ const RoomList = ({ refresh }) => {
 
   return (
     <div className="room-list">
-      <h2>Available Rooms</h2>
+      <div className="list-header">
+        <h2>Available Rooms</h2>
+        <p>Manage and view all rooms in the hotel.</p>
+      </div>
       {rooms.length === 0 ? (
-        <p>No rooms added yet.</p>
+        <div className="empty-state">
+          <div className="empty-icon">🛏️</div>
+          <p>No rooms added yet. Start by adding a new room.</p>
+        </div>
       ) : (
-        <ul>
+        <div className="room-grid">
           {rooms.map((room) => (
-            <li key={room.id}>
-              <p><strong>Room Number:</strong> {room.room_number}</p>
-              <p><strong>Type:</strong> {room.type}</p>
-              <p><strong>Price:</strong> ${room.price}</p>
-              <p><strong>Status:</strong> {room.status}</p>
-            </li>
+            <div className="room-card" key={room.id}>
+              <div className="room-card-header">
+                <h3>Room {room.room_number}</h3>
+                <span className={`status-badge ${room.status?.toLowerCase()}`}>
+                  {room.status || 'Available'}
+                </span>
+              </div>
+              <div className="room-card-body">
+                <p><strong>Type:</strong> {room.type}</p>
+                <p className="price"><strong>Price:</strong> ${room.price}<span className="per-night">/night</span></p>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

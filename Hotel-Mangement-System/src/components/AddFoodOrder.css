@@ -1,20 +1,21 @@
 .add-food-order-form {
   max-width: 500px;
   margin: 2rem auto;
-  padding: 2rem;
-  background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  animation: fadeIn 0.6s ease-in;
+  gap: 1.5rem;
+  animation: fadeInUp var(--transition-normal);
+  border: 1px solid var(--border-color);
 }
 
-@keyframes fadeIn {
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -24,50 +25,58 @@
 
 .add-food-order-form h2 {
   text-align: center;
-  color: #0f172a;
   font-size: 1.8rem;
-  background: linear-gradient(90deg, #1e3a8a, #22d3ee);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--bg-accent);
   margin-bottom: 0.5rem;
 }
 
 .add-food-order-form input,
 .add-food-order-form select,
 .add-food-order-form button {
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
+  padding: 0.875rem 1rem;
   width: 100%;
-  transition: all 0.3s ease;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all var(--transition-fast);
 }
 
 .add-food-order-form input,
 .add-food-order-form select {
-  background: #f1f5f9;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.add-food-order-form input::placeholder,
+.add-food-order-form select::placeholder {
+  color: var(--text-secondary);
 }
 
 .add-food-order-form input:focus,
 .add-food-order-form select:focus {
-  background: #fff;
-  border: 1px solid #3b82f6;
-  box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  background-color: var(--bg-secondary);
   outline: none;
 }
 
 .add-food-order-form button {
-  background: linear-gradient(90deg, #10b981, #3b82f6);
-  color: #fff;
-  font-weight: bold;
+  background-color: var(--primary-color);
+  color: var(--bg-secondary);
+  font-weight: 600;
+  border: none;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+  margin-top: 0.5rem;
 }
 
 .add-food-order-form button:hover {
-  background: linear-gradient(90deg, #0f766e, #1d4ed8);
-  box-shadow: 0 6px 16px rgba(13, 148, 136, 0.5);
-  transform: scale(1.02);
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px -1px rgba(59, 130, 246, 0.4);
+}
+
+.add-food-order-form button:active {
+  transform: translateY(0);
 }

@@ -23,19 +23,31 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <h2>Dashboard Overview</h2>
+      <div className="dashboard-header">
+        <h2>Dashboard Overview</h2>
+        <p>Welcome back! Here's what's happening today.</p>
+      </div>
       <div className="dashboard-cards">
         <div className="card total">
-          <h3>Total Rooms</h3>
-          <p>{totalRooms}</p>
+          <div className="card-icon">🏨</div>
+          <div className="card-info">
+            <h3 className="card-title">Total Rooms</h3>
+            <p className="card-value">{totalRooms}</p>
+          </div>
         </div>
         <div className="card occupied">
-          <h3>Occupied Rooms</h3>
-          <p>{occupiedRooms}</p>
+          <div className="card-icon">🔑</div>
+          <div className="card-info">
+            <h3 className="card-title">Occupied</h3>
+            <p className="card-value">{occupiedRooms}</p>
+          </div>
         </div>
         <div className="card available">
-          <h3>Available Rooms</h3>
-          <p>{availableRooms}</p>
+          <div className="card-icon">✅</div>
+          <div className="card-info">
+            <h3 className="card-title">Available</h3>
+            <p className="card-value">{availableRooms}</p>
+          </div>
         </div>
       </div>
     </div>

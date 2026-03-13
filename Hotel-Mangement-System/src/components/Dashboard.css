@@ -1,50 +1,95 @@
 .dashboard {
-    padding: 20px;
-    background-color: #f9fafb;
+  animation: fadeIn var(--transition-normal);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  .dashboard h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #111827;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .dashboard-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  
-  .card {
-    flex: 1;
-    min-width: 200px;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    background-color: #fff;
-    text-align: center;
-  }
-  
-  .card h3 {
-    font-size: 18px;
-    color: #374151;
-    margin-bottom: 8px;
-  }
-  
-  .card p {
-    font-size: 32px;
-    font-weight: bold;
-  }
-  
-  .card.total {
-    border-left: 6px solid #3b82f6;
-  }
-  
-  .card.occupied {
-    border-left: 6px solid #ef4444;
-  }
-  
-  .card.available {
-    border-left: 6px solid #10b981;
-  }
-  
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h2 {
+  font-size: 2rem;
+  color: var(--bg-accent);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+  color: var(--text-secondary);
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.card.total::before {
+  background-color: var(--primary-color);
+}
+
+.card.occupied::before {
+  background-color: var(--danger-color);
+}
+
+.card.available::before {
+  background-color: var(--success-color);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.card-title {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--bg-accent);
+  line-height: 1;
+}

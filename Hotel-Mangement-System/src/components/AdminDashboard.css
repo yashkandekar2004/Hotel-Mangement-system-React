@@ -1,0 +1,153 @@
+.admin-dashboard {
+  animation: fadeIn var(--transition-normal);
+}
+
+.admin-header {
+  margin-bottom: 2.5rem;
+}
+
+.admin-header h2 {
+  font-size: 2.25rem;
+  color: var(--bg-accent);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.025em;
+}
+
+.admin-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.metric-card {
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.metric-icon {
+  font-size: 2.5rem;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-card.revenue .metric-icon { background: rgba(16, 185, 129, 0.1); }
+.metric-card.occupancy .metric-icon { background: rgba(59, 130, 246, 0.1); }
+.metric-card.staff .metric-icon { background: rgba(245, 158, 11, 0.1); }
+
+.metric-info h3 {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--bg-accent);
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+
+.metric-trend {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.metric-trend.positive { color: var(--success-color); }
+.metric-trend.neutral { color: var(--text-secondary); }
+
+.recent-activity h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--bg-accent);
+}
+
+.table-container {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-table th {
+  background-color: var(--bg-primary);
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.admin-table tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.admin-table tbody tr:hover {
+  background-color: var(--bg-primary);
+}
+
+.admin-table td {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.admin-table .amount {
+  font-weight: 600;
+  color: var(--bg-accent);
+}
+
+.status-pill {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-pill.paid {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #047857;
+}
+
+.status-pill.pending {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+}
